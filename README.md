@@ -19,18 +19,54 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var foo = require( 'compute-issorted' );
+var issorted = require( 'compute-issorted' );
 ```
 
-#### foo( arr )
+#### issorted( arr[, comparator] )
 
-What does this function do?
+Returns a `boolean` indicating if an input `array` is sorted.
+
+``` javascript
+var bool = issorted( [ 2, 6, 13, 5 ] );
+// returns false
+```
+
+By default, the function checks if the input `array` is sorted in __ascending__order. To impose a different order, provide a `comparator` function.
+
+``` javascript
+// Descending order...
+function comparator( a, b ) {
+	return b - a;
+}
+
+var bool = issorted( [ 13, 6, 5, 2 ], comparator );
+// returns true
+```
+
+The `comparator` function behaves the same as for [`Array.prototype.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) should take two arguments: `a` and `b`, where `a` and `b` are consecutive `array` elements. The comparator should return a `numeric` value. If the returned value is less than `0` or equal to `0`, consecutive elements are considered sorted; otherwise, `issorted` returns `false`. 
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-issorted' );
+var issorted = require( 'compute-issorted' ),
+	shuffle = require( 'compute-shuffle' );
+
+// Simulate some data...
+var data = new Array( 5 );
+
+for ( var i = 0; i < data.length; i++ ) {
+	data[ i ] = i;
+}
+
+// Randomly shuffle the data and check if sorted...
+var bool;
+console.log( 'Data\t\tSorted?' );
+for ( var j = 0; j < 100; j++ ) {
+	shuffle( data );
+	bool = issorted( data );
+	console.log( data.join( ',' )+'\t'+bool );
+}
 ```
 
 To run the example code from the top-level application directory,
@@ -38,6 +74,11 @@ To run the example code from the top-level application directory,
 ``` bash
 $ node ./examples/index.js
 ```
+
+
+## Notes
+
+This function runs in linear time: `O(N)`, where `N` is the input `array` length.
 
 
 ## Tests

@@ -25,7 +25,14 @@
   "keywords": [
     "compute.io",
     "compute",
-    "computation"
+    "computation",
+    "mathematics",
+    "math",
+    "sorted",
+    "issorted",
+    "array",
+    "utilities",
+    "utils"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/issorted/issues"
@@ -33,9 +40,10 @@
   "dependencies": {},
   "devDependencies": {
     "chai": "1.x.x",
-    "mocha": "1.x.x",
+    "compute-shuffle": "^1.0.0",
     "coveralls": "^2.11.1",
-    "istanbul": "^0.3.0"
+    "istanbul": "^0.3.0",
+    "mocha": "1.x.x"
   },
   "licenses": [
     {
