@@ -43,7 +43,9 @@ var bool = issorted( [ 13, 6, 5, 2 ], comparator );
 // returns true
 ```
 
-The `comparator` function should behave the same as a comparator provided to [`Array.prototype.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort). The comparator should take two arguments: `a` and `b`, where `a` and `b` are consecutive `array` elements, and the comparator should return a `numeric` value. If the returned value is less than `0` or equal to `0`, consecutive elements are considered sorted; otherwise, `issorted` returns `false`. 
+The `comparator` function should behave the same as a comparator provided to [`arr.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort).
+
+The comparator should take two arguments: `a` and `b`, where `a` and `b` are consecutive `array` elements. If the comparator returns a `numeric` value less than or equal to `0`, consecutive elements are considered sorted; otherwise, `issorted` returns `false`. 
 
 
 ## Examples
