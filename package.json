@@ -1,6 +1,6 @@
 {
   "name": "compute-issorted",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Returns a boolean indicating if an input array is sorted.",
   "author": {
     "name": "Athan Reines",
