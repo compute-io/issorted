@@ -31,7 +31,7 @@ var bool = issorted( [ 2, 6, 13, 5 ] );
 // returns false
 ```
 
-By default, the function checks if the input `array` is sorted in __ascending__order. To impose a different order, provide a `comparator` function.
+By default, the function checks if the input `array` is sorted in __ascending__ order. To impose a different order, provide a `comparator` function.
 
 ``` javascript
 // Descending order...
@@ -43,7 +43,7 @@ var bool = issorted( [ 13, 6, 5, 2 ], comparator );
 // returns true
 ```
 
-The `comparator` function behaves the same as for [`Array.prototype.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) should take two arguments: `a` and `b`, where `a` and `b` are consecutive `array` elements. The comparator should return a `numeric` value. If the returned value is less than `0` or equal to `0`, consecutive elements are considered sorted; otherwise, `issorted` returns `false`. 
+The `comparator` function behaves the same as for [`Array.prototype.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort). The comparator should take two arguments: `a` and `b`, where `a` and `b` are consecutive `array` elements, and the comparator should return a `numeric` value. If the returned value is less than `0` or equal to `0`, consecutive elements are considered sorted; otherwise, `issorted` returns `false`. 
 
 
 ## Examples
