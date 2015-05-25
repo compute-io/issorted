@@ -16,7 +16,6 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To use the module,
 
 ``` javascript
 var issorted = require( 'compute-issorted' );
@@ -45,7 +44,7 @@ var bool = issorted( [ 13, 6, 5, 2 ], comparator );
 
 The `comparator` function should behave the same as a comparator provided to [`arr.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort).
 
-The comparator should take two arguments: `a` and `b`, where `a` and `b` are consecutive `array` elements. If the comparator returns a `numeric` value less than or equal to `0`, consecutive elements are considered sorted; otherwise, `issorted` returns `false`. 
+The comparator should take two arguments: `a` and `b`, where `a` and `b` are consecutive `array` elements. If the comparator returns a `numeric` value less than or equal to `0`, consecutive elements are considered sorted; otherwise, `issorted` returns `false`.
 
 
 ## Examples
@@ -87,7 +86,7 @@ This function runs in linear time: `O(N)`, where `N` is the input `array` length
 
 ### Unit
 
-Unit tests use the [Mocha](http://visionmedia.github.io/mocha) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha](http://mochajs.org) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -111,15 +110,15 @@ $ make view-cov
 ```
 
 
+---
 ## License
 
-[MIT license](http://opensource.org/licenses/MIT). 
+[MIT license](http://opensource.org/licenses/MIT).
 
 
----
 ## Copyright
 
-Copyright &copy; 2014. Athan Reines.
+Copyright &copy; 2014-2015. The Compute.io Authors.
 
 
 [npm-image]: http://img.shields.io/npm/v/compute-issorted.svg
